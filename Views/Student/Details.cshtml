@@ -1,0 +1,18 @@
+@model Student
+@{
+    ViewData["Title"] = "Student Details";
+}
+<div class="page-heading">
+    <div><span class="eyebrow">STUDENT RECORD · #@Model.Id</span><h1>Student Details</h1><p>Registration information for this student.</p></div>
+    <a class="button secondary" asp-action="Index">← Back to List</a>
+</div>
+<div class="details-card">
+    <div class="avatar">@Model.Name.Substring(0, 1).ToUpperInvariant()</div>
+    <h2>@Model.Name</h2>
+    <p class="muted">@Model.Email</p>
+    <div class="details-grid">
+        <div><span>STUDENT ID</span><strong>#@Model.Id</strong></div>
+        <div><span>COURSE</span><strong>@Model.Course</strong></div>
+        <div><span>SEMESTER</span><strong>@Model.Semester</strong></div>
+    </div>
+</div>

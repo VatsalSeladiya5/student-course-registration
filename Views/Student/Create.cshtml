@@ -1,0 +1,51 @@
+@model Student
+@{
+    ViewData["Title"] = "Register Student";
+}
+<div class="form-shell">
+    <div class="page-heading compact">
+        <div><span class="eyebrow">NEW REGISTRATION</span><h1>Register Student</h1><p>Enter the student's information below.</p></div>
+    </div>
+    <form asp-action="Create" method="post" class="form-card">
+        <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+        <div class="form-grid">
+            <div class="field full">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" placeholder="e.g. Vatsal Seladiya" />
+                <span asp-validation-for="Name" class="field-error"></span>
+            </div>
+            <div class="field full">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" placeholder="student@example.com" />
+                <span asp-validation-for="Email" class="field-error"></span>
+            </div>
+            <div class="field">
+                <label asp-for="Course"></label>
+                <select asp-for="Course">
+                    <option value="">Select a course</option>
+                    <option>B.Tech Computer Engineering</option>
+                    <option>B.Tech Information Technology</option>
+                    <option>BCA</option>
+                    <option>MCA</option>
+                    <option>BBA</option>
+                </select>
+                <span asp-validation-for="Course" class="field-error"></span>
+            </div>
+            <div class="field">
+                <label asp-for="Semester"></label>
+                <select asp-for="Semester">
+                    <option value="0">Select semester</option>
+                    @for (var i = 1; i <= 8; i++)
+                    {
+                        <option value="@i">Semester @i</option>
+                    }
+                </select>
+                <span asp-validation-for="Semester" class="field-error"></span>
+            </div>
+        </div>
+        <div class="form-actions">
+            <a class="button secondary" asp-action="Index">Cancel</a>
+            <button class="button primary" type="submit">Submit Registration</button>
+        </div>
+    </form>
+</div>

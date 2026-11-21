@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - StudentHub</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="topbar">
+        <div class="nav-wrap">
+            <a class="brand" asp-controller="Home" asp-action="Index">Student<span>Hub</span></a>
+            <nav>
+                <a asp-controller="Home" asp-action="Index">Home</a>
+                <a asp-controller="Student" asp-action="Index">Student List</a>
+                <a class="nav-button" asp-controller="Student" asp-action="Create">Register Student</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        @RenderBody()
+    </main>
+    <footer>
+        <div class="container">StudentHub · ASP.NET Core MVC Self-Learning Project</div>
+    </footer>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

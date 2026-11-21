@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Home";
+}
+<section class="hero">
+    <div class="hero-copy">
+        <span class="eyebrow">STUDENT COURSE REGISTRATION</span>
+        <h1>Make your next<br /><span>learning move.</span></h1>
+        <p>A simple portal to register students, explore course information, and manage student records.</p>
+        <div class="actions">
+            <a class="button primary" asp-controller="Student" asp-action="Create">Register a Student</a>
+            <a class="button secondary" asp-controller="Student" asp-action="Index">View Students</a>
+        </div>
+    </div>
+    <div class="hero-panel">
+        <div class="panel-icon">✦</div>
+        <p class="panel-label">YOUR ACADEMIC JOURNEY</p>
+        <h2>Learn. Grow.<br />Achieve.</h2>
+        <div class="panel-line"></div>
+        <p class="panel-note">One place for student course registrations.</p>
+    </div>
+</section>
+<section class="feature-grid">
+    <article class="feature-card"><div class="feature-number">01</div><h3>Register</h3><p>Submit student details through a validated registration form.</p></article>
+    <article class="feature-card"><div class="feature-number">02</div><h3>Explore</h3><p>View the list of registered students in one place.</p></article>
+    <article class="feature-card"><div class="feature-number">03</div><h3>Student details</h3><p>Open an individual record to see its complete information.</p></article>
+</section>
